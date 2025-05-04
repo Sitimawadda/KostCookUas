@@ -1,12 +1,14 @@
-# KostCook - Aplikasi Resep Praktis untuk Anak Kost
-
+# KostCook - platform resep masakan praktis dan hemat untuk anak kost
+<p align="center">
+  <img src="public/image/logo.png" alt="KostCook Logo" width="100">
+</p>
 ## 👤 Identitas
 - **Nama:** [Siti Mawaddah]
 - **NIM:** [D0223324]
 
 ## 📚 Mata Kuliah
 - **Mata Kuliah:** FRAMEWORK WEB BASED
-- **Tahun Ajaran:** 2024/2025
+- **Tahun Ajaran:** 2025
 
 KostCook adalah sebuah website yang dirancang untuk memberikan solusi bagi anak kost yang ingin menemukan resep praktis dan hemat. Website ini menyediakan berbagai resep masakan sederhana yang mudah dibuat dengan bahan yang terjangkau dan tidak membutuhkan banyak alat masak.
 KostCook bertujuan untuk membantu anak kost dalam memanfaatkan bahan makanan sederhana dan murah dengan resep-resep praktis yang tetap lezat. Selain itu, dengan adanya rating dan ulasan dari pengguna lain, KostCook juga memberikan platform untuk berbagi pengalaman memasak yang bermanfaat.
