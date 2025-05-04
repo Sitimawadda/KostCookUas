@@ -1,6 +1,6 @@
 # KostCook - platform resep masakan praktis dan hemat untuk anak kost
 <p align="center">
-  <img src="public/image/logo.png" alt="KostCook Logo" width="100">
+  <img src="public/Image/logo.png" alt="KostCook Logo" width="100">
 </p>
 ## 👤 Identitas
 - **Nama:** [Siti Mawaddah]
