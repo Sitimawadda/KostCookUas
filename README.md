@@ -3,8 +3,8 @@
   <img src="public/Image/logo.png" alt="KostCook Logo" width="100">
 </p>
 ## 👤 Identitas
-- **Nama:** [Siti Mawaddah]
-- **NIM:** [D0223324]
+Nama: [Siti Mawaddah]
+NIM:[D0223324]
 
 ## 📚 Mata Kuliah
 - **Mata Kuliah:** FRAMEWORK WEB BASED
