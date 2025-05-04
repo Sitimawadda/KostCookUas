@@ -24,6 +24,7 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+        
         Schema::create('recipes', function (Blueprint $table) {
             $table->id();
             $table->string('title');
@@ -37,6 +38,7 @@ return new class extends Migration
             $table->string('image')->nullable(); // path to image
             $table->timestamps();
         });
+        
         Schema::create('ingredients', function (Blueprint $table) {
             $table->id();
             $table->foreignId('recipe_id')->constrained('recipes')->onDelete('cascade');
@@ -44,6 +46,7 @@ return new class extends Migration
             $table->string('quantity'); // contoh: "2 butir", "1 sendok"
             $table->timestamps();
         });
+        
         Schema::create('ratings', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
@@ -57,10 +60,10 @@ return new class extends Migration
 
     public function down(): void
     {
+        Schema::dropIfExists('ratings');
+        Schema::dropIfExists('ingredients');
+        Schema::dropIfExists('recipes');
         Schema::dropIfExists('users');
         Schema::dropIfExists('roles');
-        Schema::dropIfExists('recipes');
-        Schema::dropIfExists('ingredients');
-        Schema::dropIfExists('ratings');
     }
 };

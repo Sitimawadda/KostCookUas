@@ -1,61 +1,96 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# KostCook - Aplikasi Resep Praktis untuk Anak Kost
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 👤 Identitas
+- **Nama:** [Siti Mawaddah]
+- **NIM:** [D0223324]
 
-## About Laravel
+## 📚 Mata Kuliah
+- **Mata Kuliah:** FRAMEWORK WEB BASED
+- **Tahun Ajaran:** 2024/2025
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+KostCook adalah sebuah website yang dirancang untuk memberikan solusi bagi anak kost yang ingin menemukan resep praktis dan hemat. Website ini menyediakan berbagai resep masakan sederhana yang mudah dibuat dengan bahan yang terjangkau dan tidak membutuhkan banyak alat masak.
+KostCook bertujuan untuk membantu anak kost dalam memanfaatkan bahan makanan sederhana dan murah dengan resep-resep praktis yang tetap lezat. Selain itu, dengan adanya rating dan ulasan dari pengguna lain, KostCook juga memberikan platform untuk berbagi pengalaman memasak yang bermanfaat.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🎭 Role dan Fitur Akses
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+| Role         | Fitur                                                                 |
+|--------------|------------------------------------------------------------------------|
+| **Superadmin** | - Mengelola semua user dan role<br>- Melihat semua data resep, rating |
+| **Admin**      | - Melihat & moderasi resep<br>- Melihat data rating & user            |
+| **User**       | - Membuat resep<br>- Memberi rating & komentar                        |
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🗃️ Struktur Tabel Database
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 1. `roles`
+| Field     | Tipe Data     | Keterangan         |
+|-----------|---------------|--------------------|
+| id        | bigint (PK)   | Primary Key        |
+| name      | string        | Nama role unik     |
+| timestamps| timestamps    | Created & updated  |
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 2. `users`
+| Field             | Tipe Data     | Keterangan                    |
+|------------------|---------------|-------------------------------|
+| id               | bigint (PK)   | Primary Key                   |
+| name             | string        | Nama user                     |
+| email            | string (unique)| Email user                   |
+| password         | string        | Password terenkripsi          |
+| role_id          | foreignId     | Relasi ke `roles.id`          |
+| email_verified_at| timestamp     | Waktu verifikasi email        |
+| remember_token   | string|null   | Token login                   |
+| timestamps       | timestamps    | Created & updated             |
 
-## Laravel Sponsors
+### 3. `recipes`
+| Field         | Tipe Data     | Keterangan                            |
+|---------------|---------------|----------------------------------------|
+| id            | bigint (PK)   | Primary Key                           |
+| title         | string        | Judul resep                           |
+| description   | text|null     | Deskripsi singkat                     |
+| steps         | longText      | Langkah-langkah pembuatan             |
+| prep_time     | integer|null  | Waktu persiapan (menit)              |
+| cook_time     | integer|null  | Waktu memasak (menit)                |
+| estimated_cost| decimal(10,2) | Estimasi biaya                        |
+| difficulty    | enum          | mudah / sedang / sulit               |
+| image         | string|null   | Path gambar                          |
+| user_id       | foreignId     | Relasi ke `users.id`                 |
+| timestamps    | timestamps    | Created & updated                    |
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 4. `ingredients`
+| Field     | Tipe Data     | Keterangan                  |
+|-----------|---------------|-----------------------------|
+| id        | bigint (PK)   | Primary Key                 |
+| recipe_id | foreignId     | Relasi ke `recipes.id`      |
+| name      | string        | Nama bahan                  |
+| quantity  | string        | Jumlah/ukuran (misal: 2 sdm)|
+| timestamps| timestamps    | Created & updated           |
 
-### Premium Partners
+### 5. `ratings`
+| Field     | Tipe Data     | Keterangan                            |
+|-----------|---------------|----------------------------------------|
+| id        | bigint (PK)   | Primary Key                           |
+| user_id   | foreignId     | Relasi ke `users.id`                  |
+| recipe_id | foreignId     | Relasi ke `recipes.id`                |
+| rating    | tinyInteger   | Skor (1–5)                            |
+| comment   | text|null     | Komentar pengguna                     |
+| timestamps| timestamps    | Created & updated                     |
+| unique    | user_id + recipe_id | Satu user hanya bisa rating sekali |
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+## 🔗 Relasi Antar Tabel
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+| Tabel Asal     | Relasi           | Tabel Tujuan | Jenis Relasi       |
+|----------------|------------------|--------------|---------------------|
+| `users`        | hasMany          | `recipes`    | 1 user banyak resep |
+| `roles`        | hasMany          | `users`      | 1 role banyak user  |
+| `recipes`      | hasMany          | `ingredients`| 1 resep banyak bahan|
+| `recipes`      | hasMany          | `ratings`    | 1 resep banyak rating|
+| `users`        | hasMany          | `ratings`    | 1 user banyak rating|
+| `ratings`      | belongsTo        | `users` & `recipes` | rating milik user & resep |
+| `ingredients`  | belongsTo        | `recipes`    | bahan milik resep   |
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
