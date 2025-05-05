@@ -1,9 +1,6 @@
-# KostCook - platform resep masakan praktis dan hemat untuk anak kost
-<p align="center">
-  <img src="public/Image/logo.png" alt="KostCook Logo" width="100">
-</p>
+
  <div align="center">
-    <h1> SISTEM PENYEWAAN ASRAMA MAHASISWA </h1>
+    <h1>KostCook - platform resep masakan praktis dan hemat untuk anak kost  </h1>
 
 
   <img src="unsulbarlogo.jpg" alt="Logo Unsulbar" width="200"/>
