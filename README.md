@@ -2,37 +2,50 @@
 <p align="center">
   <img src="public/Image/logo.png" alt="KostCook Logo" width="100">
 </p>
-## 👤 Identitas
-Nama: [Siti Mawaddah]
-NIM:[D0223324]
+ <div align="center">
+    <h1> SISTEM PENYEWAAN ASRAMA MAHASISWA </h1>
 
-## 📚 Mata Kuliah
-- **Mata Kuliah:** FRAMEWORK WEB BASED
-- **Tahun Ajaran:** 2025
+
+  <img src="unsulbarlogo.jpg" alt="Logo Unsulbar" width="200"/>
+
+
+  <p><strong>Siti Mawaddah</strong><br/>D0223324</p> <br>
+
+  <h1> FRAMEWORK WEB BASED </h1>
+  <h1> 2025 </h1>
+
+</div>
+
+
+---
+
+  Mata Kuliah
+- Mata Kuliah: FRAMEWORK WEB BASED
+- Tahun Ajaran: 2025
 
 KostCook adalah sebuah website yang dirancang untuk memberikan solusi bagi anak kost yang ingin menemukan resep praktis dan hemat. Website ini menyediakan berbagai resep masakan sederhana yang mudah dibuat dengan bahan yang terjangkau dan tidak membutuhkan banyak alat masak.
 KostCook bertujuan untuk membantu anak kost dalam memanfaatkan bahan makanan sederhana dan murah dengan resep-resep praktis yang tetap lezat. Selain itu, dengan adanya rating dan ulasan dari pengguna lain, KostCook juga memberikan platform untuk berbagi pengalaman memasak yang bermanfaat.
 
-## 🎭 Role dan Fitur Akses
+  Role dan Fitur Akses
 
 | Role         | Fitur                                                                 |
 |--------------|------------------------------------------------------------------------|
-| **Superadmin** | - Mengelola semua user dan role<br>- Melihat semua data resep, rating |
-| **Admin**      | - Melihat & moderasi resep<br>- Melihat data rating & user            |
-| **User**       | - Membuat resep<br>- Memberi rating & komentar                        |
+| Superadmin | - Mengelola semua user dan role<br>- Melihat semua data resep, rating |
+| Admin     | - Melihat & moderasi resep<br>- Melihat data rating & user            |
+| User       | - Membuat resep<br>- Memberi rating & komentar                        |
 
 ---
 
-## 🗃️ Struktur Tabel Database
+ Struktur Tabel Database
 
-### 1. `roles`
+ 1. `roles`
 | Field     | Tipe Data     | Keterangan         |
 |-----------|---------------|--------------------|
 | id        | bigint (PK)   | Primary Key        |
 | name      | string        | Nama role unik     |
 | timestamps| timestamps    | Created & updated  |
 
-### 2. `users`
+ 2. `users`
 | Field             | Tipe Data     | Keterangan                    |
 |------------------|---------------|-------------------------------|
 | id               | bigint (PK)   | Primary Key                   |
@@ -44,7 +57,7 @@ KostCook bertujuan untuk membantu anak kost dalam memanfaatkan bahan makanan sed
 | remember_token   | string|null   | Token login                   |
 | timestamps       | timestamps    | Created & updated             |
 
-### 3. `recipes`
+ 3. `recipes`
 | Field         | Tipe Data     | Keterangan                            |
 |---------------|---------------|----------------------------------------|
 | id            | bigint (PK)   | Primary Key                           |
@@ -59,7 +72,7 @@ KostCook bertujuan untuk membantu anak kost dalam memanfaatkan bahan makanan sed
 | user_id       | foreignId     | Relasi ke `users.id`                 |
 | timestamps    | timestamps    | Created & updated                    |
 
-### 4. `ingredients`
+ 4. `ingredients`
 | Field     | Tipe Data     | Keterangan                  |
 |-----------|---------------|-----------------------------|
 | id        | bigint (PK)   | Primary Key                 |
@@ -68,7 +81,7 @@ KostCook bertujuan untuk membantu anak kost dalam memanfaatkan bahan makanan sed
 | quantity  | string        | Jumlah/ukuran (misal: 2 sdm)|
 | timestamps| timestamps    | Created & updated           |
 
-### 5. `ratings`
+ 5. `ratings`
 | Field     | Tipe Data     | Keterangan                            |
 |-----------|---------------|----------------------------------------|
 | id        | bigint (PK)   | Primary Key                           |
@@ -81,7 +94,7 @@ KostCook bertujuan untuk membantu anak kost dalam memanfaatkan bahan makanan sed
 
 ---
 
-## 🔗 Relasi Antar Tabel
+ Relasi Antar Tabel
 
 | Tabel Asal     | Relasi           | Tabel Tujuan | Jenis Relasi       |
 |----------------|------------------|--------------|---------------------|
