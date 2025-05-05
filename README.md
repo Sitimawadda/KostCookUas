@@ -16,7 +16,6 @@
 
 ---
 
-  Mata Kuliah
 - Mata Kuliah: FRAMEWORK WEB BASED
 - Tahun Ajaran: 2025
 
