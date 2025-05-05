@@ -3,7 +3,7 @@
     <h1>KostCook - platform resep masakan praktis dan hemat untuk anak kost  </h1>
 
 
-  <img src="unsulbarlogo.jpg" alt="Logo Unsulbar" width="200"/>
+  <img src="logos.png" alt="Logo Unsulbar" width="200"/>
 
 
   <p><strong>Siti Mawaddah</strong><br/>D0223324</p> <br>
