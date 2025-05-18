@@ -47,6 +47,11 @@
                 <input type="password" name="password" required
                        class="w-full px-4 py-2 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400">
             </div>
+            <div class="flex items-center mb-4">
+                <input id="remember" type="checkbox" name="remember" class="w-4 h-4 text-orange-500 border-gray-300 rounded focus:ring-orange-400">
+                <label for="remember" class="ml-2 text-sm text-gray-600">Ingat saya</label>
+            </div>
+
 
             <button type="submit"
                     class="w-full px-4 py-2 font-semibold text-white bg-orange-500 rounded-lg hover:bg-orange-600 transition">
