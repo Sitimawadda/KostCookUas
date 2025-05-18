@@ -28,4 +28,9 @@ class Recipe extends Model
     {
         return $this->hasMany(Rating::class);
     }
+    public function favoritedByUsers()
+{
+    return $this->belongsToMany(User::class, 'recipe_user')->withTimestamps();
+}
+
 }
